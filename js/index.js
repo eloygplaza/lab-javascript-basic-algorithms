@@ -38,4 +38,37 @@ const latinText =
 const numWords = latinText.split(" ").length;
 console.log(`Los tres parafos tienen en total ${numWords} palabras`);
 
-// Bonus
+// Bonus 2
+const palindromo = [
+  "A man, a plan, a canal, Panama!",
+  "Amor, Roma",
+  "race car",
+  "stack cats",
+  "step on no pets",
+  "taco cat",
+  "put it up",
+  "Was it a car or a cat I saw?",
+  "No 'x' in Nixon",
+];
+
+palindromo.forEach((e) => {
+  e
+    .toLowerCase()
+    .replaceAll(" ", "")
+    .replaceAll(",", "")
+    .replaceAll("!", "")
+    .replaceAll("?", "")
+    .replaceAll("'", "") ==
+  e
+    .toLowerCase()
+    .replaceAll(" ", "")
+    .replaceAll(",", "")
+    .replaceAll("!", "")
+    .replaceAll("?", "")
+    .replaceAll("'", "")
+    .split("")
+    .reverse()
+    .join("")
+    ? console.log(`Si, -${e}- es palindromo`)
+    : console.log(`No, -${e}- no es palindromo`);
+});
